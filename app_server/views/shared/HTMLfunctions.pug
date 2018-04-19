@@ -1,0 +1,6 @@
+mixin outputPizza(pizza)
+  tr(onclick= "actualizarPedido(event)")
+    td
+      input(type= "checkbox")
+    td= pizza.nombre
+    td= pizza.precio

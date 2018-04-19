@@ -1,5 +1,23 @@
 extends layout
-
+include shared/HTMLfunctions
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+    .titulo
+      h1= title
+    .menu
+      table#tabla
+        tr
+          th Comprar
+          th Pizzas
+          th Precio
+        tr
+          th(colspan="3") Clásicas
+        each pizza in pizzas.clasicas
+          +outputPizza(pizza)
+        tr
+          th(colspan="3") Especiales
+        each pizza in pizzas.especiales
+          +outputPizza(pizza)
+    .calculo
+      span.total Total: $
+        span#total 0.00
